@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven'
-      args '-v /root/.m2:/root/.m2'
-    }
-
-  }
+  agent any
   stages {
     stage('start') {
       steps {
@@ -15,13 +9,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh '''mvn clean
-&&
-mvn test
-&&
-mvn package
-&&
-ls'''
+        sh ' docker images'
       }
     }
 
