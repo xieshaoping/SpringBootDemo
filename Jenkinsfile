@@ -9,7 +9,13 @@ pipeline {
 
     stage('test') {
       steps {
-        sh 'ls'
+        sh '''mvn clean
+&&
+mvn test
+&&
+mvn package
+&&
+ls'''
       }
     }
 
