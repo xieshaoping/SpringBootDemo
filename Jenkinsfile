@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('中文') {
+    stage('start') {
       steps {
-        echo '中文'
+        echo 'start'
       }
     }
 
