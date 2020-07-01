@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         input 'pause!'
-        sh 'mvn -version'
+        sh 'mvn clean install'
       }
     }
 
