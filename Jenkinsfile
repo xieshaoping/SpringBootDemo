@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      args '-v /root/maven:/usr/share/maven --restart always --name maven'
-      image 'maven'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
