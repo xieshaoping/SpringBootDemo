@@ -24,6 +24,12 @@ pipeline {
       }
     }
 
+    stage('test') {
+      steps {
+        sh 'tail -200f log.log'
+      }
+    }
+
   }
   post {
     always {
