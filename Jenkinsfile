@@ -26,7 +26,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh 'tail -f log.log'
+        sh 'tail  log.log'
       }
     }
 
