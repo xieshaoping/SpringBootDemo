@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'arron.harbor.com/seczone/maven:3.6.3'
       args '-v /root/maven:/usr/share/maven --restart always --name maven'
+      image 'maven'
     }
 
   }
