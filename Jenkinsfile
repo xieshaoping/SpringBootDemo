@@ -20,13 +20,13 @@ pipeline {
         echo 'Security Testing completed...'
         echo "Workspace: ${env.WORKSPACE}"
         echo 'Deploying to staging enviroment....'
-        sh 'nohup java -jar target/demo-0.0.1-SNAPSHOT.jar --htttpPort=8086>log.log&'
+        sh 'nohup java -jar target/demo-0.0.1-SNAPSHOT.jar --httpPort=8086>log.log&'
       }
     }
 
     stage('test') {
       steps {
-        sh 'tail -200f log.log'
+        sh 'tail log.log'
       }
     }
 
