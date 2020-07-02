@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy - Staging') {
       steps {
-        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start&&tail -f /root/demo.log'
+        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start'
       }
     }
 
