@@ -4,9 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         input 'pause!'
-        sh 'mvn clea install -Dmaven.test.skip=true'
         retry(count: 3) {
           echo '123'
+          sh 'mvn clea install -Dmaven.test.skip=true'
         }
 
       }
