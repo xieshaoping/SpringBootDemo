@@ -5,7 +5,7 @@ pipeline {
       steps {
         input 'pause!'
         sh 'mvn clean install -Dmaven.test.skip=true'
-        timeout(time: 1, activity: true, unit: 'SECONDS') {
+        timeout(time: 999, activity: true, unit: 'SECONDS') {
           echo 'test'
         }
 
@@ -25,7 +25,7 @@ pipeline {
         echo "Workspace: ${env.WORKSPACE}"
         echo 'Deploying to staging enviroment....'
         sh 'mv target/demo-0.0.1-SNAPSHOT.jar /root/file/demo.jar'
-        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start&&tail -f /root/demo.log'
+        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start&&tail /root/demo.log'
       }
     }
 
