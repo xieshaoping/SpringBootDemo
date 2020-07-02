@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         input 'pause!'
-        sh 'mvn clean install -Dmaven.test.skip=true'
+        sh 'mvn clea install -Dmaven.test.skip=true'
         retry(count: 3) {
           echo '123'
         }
