@@ -21,7 +21,7 @@ pipeline {
         echo "Workspace: ${env.WORKSPACE}"
         echo 'Deploying to staging enviroment....'
         sh 'mv target/demo-0.0.1-SNAPSHOT.jar /root/file/demo.jar'
-        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start'
+        sh 'sh /root/demo.sh stop&&sh /root/demo.sh start&&tail -f /root/demo.log'
       }
     }
 
