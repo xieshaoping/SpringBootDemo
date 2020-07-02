@@ -4,11 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         input 'pause!'
-        retry(count: 3) {
-          echo '123'
-          sh 'mvn clea install -Dmaven.test.skip=true'
-        }
-
+        sh 'mvn clean install -Dmaven.test.skip=true'
+        mail(subject: '11', body: '11', charset: 'utf-8', from: '987319557@qq.com', to: '987319557@qq.com')
       }
     }
 
