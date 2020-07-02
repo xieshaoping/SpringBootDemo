@@ -5,6 +5,10 @@ pipeline {
       steps {
         input 'pause!'
         sh 'mvn clean install -Dmaven.test.skip=true'
+        timeout(time: 1, activity: true, unit: 'SECONDS') {
+          echo 'test'
+        }
+
       }
     }
 
