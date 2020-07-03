@@ -5,7 +5,6 @@ pipeline {
       steps {
         input 'pause!'
         sh 'mvn clean install -Dmaven.test.skip=true'
-        mail(subject: '11', body: '11', charset: 'utf-8', from: '987319557@qq.com', to: '987319557@qq.com')
       }
     }
 
