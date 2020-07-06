@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'pppppppppppppppp'
+        input 'pause!'
+        sh 'mvn clean install -Dmaven.test.skip=true'
       }
     }
 
