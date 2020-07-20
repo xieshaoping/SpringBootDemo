@@ -5,6 +5,7 @@ pipeline {
       steps {
         input 'pause!'
         sh 'mvn clean install -Dmaven.test.skip=true'
+        sh 'echo ${env.WORKSPACE}'
       }
     }
 
