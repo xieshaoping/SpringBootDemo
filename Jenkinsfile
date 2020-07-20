@@ -3,10 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-echo "${env.WORKSPACE}"
+        echo "${env.WORKSPACE}"
         input 'pause!'
         sh 'mvn clean install -Dmaven.test.skip=true'
-        
       }
     }
 
